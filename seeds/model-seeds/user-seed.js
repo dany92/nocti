@@ -13,14 +13,15 @@ var seedUsers = function () {
         {
             username: 'obama',
             email: 'obama@gmail.com',
-            password: 'potus',
+            password: 'password',
             isRegistered: true,
             isAdmin: true
         },
         {
-            username: 'Piper Halliwell',
-            email: 'phalliwell@gmail.com',
-            isRegistered: false
+            username: 'sean',
+            email: 'sean@gmail.com',
+            password: 'password',
+            isRegistered: true
         }
     ];
 

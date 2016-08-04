@@ -3,33 +3,46 @@ var EventAttendee = db.model('event_attendee');
 
 var seedEventAttendee = function () {
 
-    // var users = [
-    //     {
-    //         username: 'joseph',
-    //         email: 'testing@fsa.com',
-    //         password: 'password',
-    //         isRegistered: true
-    //     },
-    //     {
-    //         username: 'obama',
-    //         email: 'obama@gmail.com',
-    //         password: 'potus',
-    //         isRegistered: true,
-    //         isAdmin: true
-    //     },
-    //     {
-    //         username: 'Piper Halliwell',
-    //         email: 'phalliwell@gmail.com',
-    //         isRegistered: false
-    //     }
-    // ];
+    var event_attendees = [
+        {
+            eventId: 1,
+            userId: 1,
+        },
+        {
+            eventId: 1,
+            userId: 2,
+        },
+        {
+            eventId: 1,
+            userId: 3,
+        },
+        {
+            eventId: 2,
+            userId: 1,
+        },{
+            eventId: 2,
+            userId: 2,
+        },
+        {
+            eventId: 3,
+            userId: 1,
+        },
+        {
+            eventId: 3,
+            userId: 3,
+        },
+        {
+            eventId: 4,
+            userId: 2,
+        }
+    ];
 
 
-    // var creatingUsers = users.map(function (userObj) {
-    //     return User.create(userObj);
-    // });
+    var creatingEventAttendees = event_attendees.map(function (eaObj) {
+        return EventAttendee.create(eaObj);
+    });
 
-    // return Promise.all(creatingUsers);
+    return Promise.all(creatingEventAttendees);
 
 };
 
