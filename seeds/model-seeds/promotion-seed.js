@@ -3,33 +3,43 @@ var Promotion = db.model('promotion');
 
 var seedPromotion = function () {
 
-    // var users = [
-    //     {
-    //         username: 'joseph',
-    //         email: 'testing@fsa.com',
-    //         password: 'password',
-    //         isRegistered: true
-    //     },
-    //     {
-    //         username: 'obama',
-    //         email: 'obama@gmail.com',
-    //         password: 'potus',
-    //         isRegistered: true,
-    //         isAdmin: true
-    //     },
-    //     {
-    //         username: 'Piper Halliwell',
-    //         email: 'phalliwell@gmail.com',
-    //         isRegistered: false
-    //     }
-    // ];
+    var promotions = [
+        {
+            title: 'Ladies Free before 11',
+            secret_code: 'SJEKFJS',
+            start_date: '2016-03-02 21:00',
+            end_date: '2016-03-02 23:30',
+            filter: ['Female']
+        },
+        {
+            title: 'Frat Brother 50% Discount',
+            secret_code: 'FJLSKE',
+            start_date: '2016-05-11 22:00',
+            end_date: '2016-05-12 2:00',
+            filter: ['Male', 'College']
+        },
+        {
+            title: 'Valentine Singles - 50% off',
+            secret_code: 'SORRY1',
+            start_date: '2016-02-14 23:00',
+            end_date: '2016-02-15 6:00',
+            filter: ['Female', 'Male', 'Couple', 'Single']
+        },
+        {
+            title: 'Christmas Wear White Free Entrance',
+            secret_code: 'CHRIST16',
+            start_date: '2016-12-24 20:00',
+            end_date: '2016-12-25 4:00',
+            filter: ['All']
+        }
+    ];
 
 
-    // var creatingUsers = users.map(function (userObj) {
-    //     return User.create(userObj);
-    // });
+    var creatingPromotions = promotions.map(function (promotionObj) {
+        return Promotion.create(promotionObj);
+    });
 
-    // return Promise.all(creatingUsers);
+    return Promise.all(creatingPromotions);
 
 };
 

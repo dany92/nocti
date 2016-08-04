@@ -18,4 +18,5 @@ module.exports = db.define('event', {
     end_date:{
     	type: Sequelize.DATE
     }
+    //maybe include filter here too?
 });
