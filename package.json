@@ -1,7 +1,7 @@
 {
-  "name": "FullstackGeneratedApp",
+  "name": "Noctis",
   "version": "1.0.0",
-  "description": "A generated project at Fullstack Academy",
+  "description": "App for night events",
   "main": "server/start.js",
   "scripts": {
     "start": "nodemon --watch server -e js,html server/start.js",
