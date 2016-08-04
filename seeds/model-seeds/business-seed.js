@@ -3,33 +3,23 @@ var Business = db.model('business');
 
 var seedBusiness = function () {
 
-    // var users = [
-    //     {
-    //         username: 'joseph',
-    //         email: 'testing@fsa.com',
-    //         password: 'password',
-    //         isRegistered: true
-    //     },
-    //     {
-    //         username: 'obama',
-    //         email: 'obama@gmail.com',
-    //         password: 'potus',
-    //         isRegistered: true,
-    //         isAdmin: true
-    //     },
-    //     {
-    //         username: 'Piper Halliwell',
-    //         email: 'phalliwell@gmail.com',
-    //         isRegistered: false
-    //     }
-    // ];
+    var businesses = [
+        {
+            name: 'Little Branch',
+            address: '22 7th Ave S, New York, NY 10014',
+            category: 'bar'
+            email: 'whatever@gmail.com',
+            phone: '203-234-6633',
+            website: 'www.thisisgreat.com'
+        }
+    ];
 
 
-    // var creatingUsers = users.map(function (userObj) {
-    //     return User.create(userObj);
-    // });
+    var creatingBusinesses = businesses.map(function (businessObj) {
+        return Business.create(businessObj);
+    });
 
-    // return Promise.all(creatingUsers);
+    return Promise.all(creatingBusinesses);
 
 };
 

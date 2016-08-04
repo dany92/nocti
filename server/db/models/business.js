@@ -12,6 +12,9 @@ module.exports = db.define('business', {
     address: {
     	type: Sequelize.STRING
     },
+    category: {
+        type: Sequelize.ENUM('bar', 'nightclub')
+    }
     email: {
     	type: Sequelize.STRING
     },
