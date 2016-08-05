@@ -29,7 +29,7 @@ router.get('/:id', function(req,res,next){
 })
 
 router.post('/', function(req,res,next){
-	Review.create(req.body)
+	Event.create(req.body)
 	.then(createdEvent => res.json(createdEvent))
 	.catch(next);
 })
