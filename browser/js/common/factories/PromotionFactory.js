@@ -1,4 +1,4 @@
-app.factory('promotionFactory', function ($http) {
+app.factory('PromotionFactory', function ($http) {
     var getData = function(res){ return res.data};
 
     return {

@@ -1,4 +1,4 @@
-app.factory('feedFactory', function ($http) {
+app.factory('FeedFactory', function ($http) {
     var getData = function(res){ return res.data};
 
     return {
