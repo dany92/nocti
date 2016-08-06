@@ -19,4 +19,10 @@ module.exports = db.define('event', {
     	type: Sequelize.DATE
     }
     //maybe include filter here too?
+}, {
+    getterMethods: {
+        isPast: function(){
+            return this.end_date < new Date();
+        }
+    }
 });

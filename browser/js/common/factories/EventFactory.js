@@ -3,15 +3,11 @@ app.factory('EventFactory', function ($http) {
 
     return {
 
-        fetchAll: function () {
-            return $http.get('/api/events')
+        fetchAll: function (filter) {
+            filter = filter || {};
+            return $http.get('/api/events', {params: filter })
             .then (getData)
         },
-
-        // fetchByCategory: function (category) {
-        //     return $http.get('/api/events/category/' + category)
-        //     .then (getData)
-        // },
 
         fetchById: function (id) {
             return $http.get('/api/events/' + id)

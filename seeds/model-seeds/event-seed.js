@@ -12,6 +12,13 @@ var seedEvent = function () {
             businessId: 1
         },
         {
+            title: 'Hot Summer Night',
+            description: 'Make your summer night memorable',
+            start_date: '2016-08-29 23:30',
+            end_date: '2016-08-30 4:30',
+            businessId: 1
+        },
+        {
             title: 'Alpha Di Mixer',
             description: 'Best Frat Party of the Year',
             start_date: '2016-05-11 22:00',
