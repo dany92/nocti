@@ -10,6 +10,7 @@ app.config(function ($stateProvider) {
         },
         controller: function($scope, event){
         	$scope.event = event;
+            $scope.promotions = event.promotions;
         }
     })
 })

@@ -34,11 +34,11 @@ db.sync({ force: true })
     .then(function () {
         return seedBusiness();
     })
-    .then(function () {
-        return seedPromotion();
-    })
     .then(function(){
         return seedEvent();
+    })
+    .then(function () {
+        return seedPromotion();
     })
     .then(function(){
         return seedFeed();
