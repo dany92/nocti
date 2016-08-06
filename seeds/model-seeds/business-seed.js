@@ -60,9 +60,9 @@ var seedBusiness = function () {
             lat: 37.803722,
             long: -122.415576,
             category: 'nightclub',
-            email: 'watchout@gmail.com',
-            phone: '758-344-0940',
-            website: 'www.onlyslightlytipsy.com'
+            email: 'dawn@gmail.com',
+            phone: '111-222-0357',
+            website: 'www.levelup.com'
         }
     ];
 
