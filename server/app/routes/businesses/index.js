@@ -10,7 +10,7 @@ router.get('/', function(req,res,next){
 	Business.findAll({where: req.query})
 	.then(businesses => {
 		var filtered = sortBusiness(businesses, {latitude: 40.729749, longitude: -74.033530});
-		console.log("filtered!!!", filtered);
+		// console.log("filtered!!!", filtered);
 		res.json(filtered);
 	})
 	.catch(next);
