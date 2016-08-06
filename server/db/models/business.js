@@ -2,6 +2,7 @@
 var crypto = require('crypto');
 var _ = require('lodash');
 var Sequelize = require('sequelize');
+var geolib = require('geolib');
 
 var db = require('../_db');
 
@@ -11,6 +12,12 @@ module.exports = db.define('business', {
     },
     address: {
     	type: Sequelize.STRING
+    },
+    lat:{
+        type: Sequelize.FLOAT
+    },
+    long:{
+        type: Sequelize.FLOAT
     },
     category: {
         type: Sequelize.ENUM('bar', 'nightclub')
@@ -24,5 +31,11 @@ module.exports = db.define('business', {
     website: {
     	type: Sequelize.STRING
     }
-}, {timestamps: false});
+}, {timestamps: false,
+    instanceMethods: {
+        getDistance: function(currentCoor){
+            return geolib.convertUnit('mi', geolib.getDistance(currentCoor, {longitude: this.long, latitude: this.lat}));
+        }
+    }
+});
 
