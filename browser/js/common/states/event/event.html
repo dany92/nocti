@@ -1,0 +1,6 @@
+<h1>{{event.title}}</h1>
+<p>Description: {{event.description}}</p>
+<p>Date: {{event.start_date}} ~ {{event.end_date}}</p>
+
+<h2>Promotions</h2>
+<p ng-repeat='promotion in promotions'>{{promotion.title}}, {{promotion.secret_code}}</p>

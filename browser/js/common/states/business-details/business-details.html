@@ -1,0 +1,14 @@
+<h1>{{business.name}} Details </h1>
+<h2>Type: {{business.category}}</h2>
+<p>Address: {{business.address}}</p>
+<p>Website: <a href='{{business.website}}'> website</a></p>
+
+<h1>All Events</h1>
+<div ng-repeat='event in events'>
+<p>{{event.title}}</p>	
+</div>
+
+<button ui-sref='business-upcomingEvents'>Upcoming</button>
+<button ui-sref='business-pastEvents'>Past</button>
+
+<ui-view></ui-view>
