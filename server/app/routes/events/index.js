@@ -11,9 +11,7 @@ router.get('/', function(req,res,next){
 })
 
 router.param('id', function (req, res, next, id) {
-	Event.findById(id, {include: [{
-            model: db.model('promotion')
-        }]})
+	Event.findById(id, {include: [{ model: db.model('promotion')}]})
 	.then(function (event) {
 		if (event) {
 			req.event = event;

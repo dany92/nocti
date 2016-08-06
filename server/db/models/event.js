@@ -23,6 +23,13 @@ module.exports = db.define('event', {
     getterMethods: {
         isPast: function(){
             return this.end_date < new Date();
+        },
+        timeRemaining: function(){
+            var one_day=1000*60*60*24;
+            return parseInt((this.start_date - new Date())/one_day); 
         }
+    },
+    defaultScope: {
+        include: [db.model('business')]
     }
 });

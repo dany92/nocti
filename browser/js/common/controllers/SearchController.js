@@ -40,7 +40,7 @@ app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory){
 			businessIds
 		})
 		.then(function(events){
-			$scope.events = events;
+			$scope.events = events.filter(event=> !event.isPast);
 		})
 	}
 
