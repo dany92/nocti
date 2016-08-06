@@ -3,6 +3,8 @@
 <div ng-repeat="business in businesses">
 <p>{{business.name}}</p>
 <p>{{business.address}}</p>
+<p>Events:</p>
+<p ng-repeat='event in business.events'>{{event.title}}</p>
 <br/>
 </div>
 

@@ -32,16 +32,16 @@ db.sync({ force: true })
         return seedUsers();
     })
     .then(function () {
-        return seedPromotion();
+        return seedBusiness();
     })
-    .then(function(){
-        return seedFeed();
+    .then(function () {
+        return seedPromotion();
     })
     .then(function(){
         return seedEvent();
     })
-    .then(function () {
-        return seedBusiness();
+    .then(function(){
+        return seedFeed();
     })
     .then(function () {
         return seedEventAttendee();

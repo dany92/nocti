@@ -7,7 +7,8 @@ module.exports = router;
 
 router.get('/', function(req,res,next){
 	//category will be req.query
-	Business.findAll({where: req.query})
+	Business.findAll({where: req.query, include: [{
+    model: db.model('event')}]})
 	.then(businesses => {
 		var filtered = sortBusiness(businesses, {latitude: 40.729749, longitude: -74.033530});
 		// console.log("filtered!!!", filtered);
@@ -18,7 +19,7 @@ router.get('/', function(req,res,next){
 
 function sortBusiness(businesses, currentCoor){
 	var filtered = _.filter(businesses, function(business){
-			return business.getDistance(currentCoor)<=4;
+			return business.getDistance(currentCoor)<=5;
 		})
 	return filtered;
 }

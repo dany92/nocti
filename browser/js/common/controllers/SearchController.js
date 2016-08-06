@@ -4,6 +4,7 @@ app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory){
 	BusinessFactory.fetchAll()
 	.then(businesses => {
 		console.log("business in factory", businesses);
+		console.log(businesses[0])
 		$scope.businesses = businesses
 	})
 

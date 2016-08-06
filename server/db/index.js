@@ -3,17 +3,17 @@ var db = require('./_db');
 module.exports = db;
 
 var User = require('./models/user');
+var Business = require('./models/business');
 var Event = require('./models/event');
 var Promotion = require('./models/promotion');
-var Business = require('./models/business');
 var Feed = require('./models/feed');
 var EventAttendee = require('./models/event_attendee')
 
 Business.belongsTo(User);
 User.hasMany(Business);
 
-Event.belongsTo(Business);
 Business.hasMany(Event);
+Event.belongsTo(Business);
 
 Promotion.belongsTo(Business);
 Business.hasMany(Promotion);
