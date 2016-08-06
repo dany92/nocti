@@ -17,13 +17,36 @@ router.get('/', function(req,res,next){
 	.catch(next);
 })
 
-function sortBusiness(businesses, currentCoor){
-	var filtered = _.filter(businesses, function(business){
-			return business.getDistance(currentCoor)<=5;
-		})
-	return filtered;
-}
+// function sortBusiness(businesses, currentCoor){
+// 	var filtered = _.filter(businesses, function(business){
+// 			return business.getDistance(currentCoor)<=20;
+// 		})
+// 	return filtered;
+// }
 
+function sortBusiness(businesses, currentCoor){
+	businesses.forEach(business=> {
+		business.distance = business.getDistance(currentCoor);
+	})
+	var result = _.chain(businesses)
+	.filter(function(business){
+		return business.distance <= 20;
+	})
+	.sortBy(function(filtered){return filtered.distance})
+	.groupBy(function(sorted){
+		if(sorted.distance <= 5){
+			return 'within5'
+		}else if (sorted.distance <= 10){
+			return 'within10'
+		}else if (sorted.distance <= 15){
+			return 'within15'
+		}else{
+			return 'within20'
+		}
+	})
+	
+	return result;
+}
 
 
 router.param('id', function (req, res, next, id) {
