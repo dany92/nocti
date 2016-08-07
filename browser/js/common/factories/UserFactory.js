@@ -8,11 +8,6 @@ app.factory('UserFactory', function ($http) {
             .then (getData)
         },
 
-        // fetchByCategory: function (category) {
-        //     return $http.get('/api/users/category/' + category)
-        //     .then (getData)
-        // },
-
         fetchById: function (id) {
             return $http.get('/api/users/' + id)
             .then (getData)
