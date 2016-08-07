@@ -27,18 +27,6 @@ app.config(function ($stateProvider) {
                 }
               }
             });
-
-            // $scope.$watch('isAttending', function(){
-            //     console.log("switched!!");
-            //     if($scope.isAttending){
-            //         EventAttendeeFactory.createEventAttendee({userId: currentUser.id, eventId: event.id});
-            //     }else{
-            //         EventAttendeeFactory.deleteEventAttendee({userId: currentUser.id, eventId: event.id});
-            //     }
-            // })
-            
-
-
         }
     })
 })
