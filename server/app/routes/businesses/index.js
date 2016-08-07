@@ -18,13 +18,6 @@ router.get('/', function(req,res,next){
 })
 // latitude: 40.729749, longitude: -74.033530
 
-// function sortBusiness(businesses, currentCoor){
-// 	var filtered = _.filter(businesses, function(business){
-// 			return business.getDistance(currentCoor)<=20;
-// 		})
-// 	return filtered;
-// }
-
 function sortBusiness(businesses, currentCoor){
 	businesses.forEach(business=> {
 		business.distance = business.getDistance(currentCoor);
