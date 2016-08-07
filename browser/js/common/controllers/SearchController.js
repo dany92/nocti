@@ -6,10 +6,10 @@ app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory){
 			latitude: position.coords.latitude,
 			longitude: position.coords.longitude
 		}
-		BusinessFactory.fetchAll({position: pos})
-		.then(businesses => {
-			console.log("GOTBACK!!!", businesses);
-		})
+		// BusinessFactory.fetchAll({position: pos})
+		// .then(businesses => {
+		// 	console.log("GOTBACK!!!", businesses);
+		// })
 	})
 
 	BusinessFactory.fetchAll({})
@@ -49,13 +49,14 @@ app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory){
 	}
 	
 	function setEvents(){
-		var businessIds = $scope.businesses.map(b=>b.id)
-		EventFactory.fetchAll({businessId:
-			businessIds
-		})
-		.then(function(events){
-			$scope.events = events.filter(event=> !event.isPast);
-		})
+		var businessIds = $scope.businesses.map(b=>b.id);
+		if(businessIds.length === 0) $scope.events = [];
+		else{
+			EventFactory.fetchAll({businessId: businessIds})
+			.then(function(events){
+				$scope.events = events.filter(event=> !event.isPast);
+			})
+		}
 	}
 
 })

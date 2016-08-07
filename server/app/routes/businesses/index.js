@@ -17,6 +17,7 @@ router.get('/', function(req,res,next){
 	})
 	.catch(next);
 })
+// latitude: 40.729749, longitude: -74.033530
 
 router.get('/', function(req,res,next){
 	//category will be req.query
