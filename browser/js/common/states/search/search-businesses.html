@@ -3,6 +3,7 @@
 <div ng-repeat="business in businesses track by $index">
 <p>{{business.name}}</p>
 <p>{{business.address}}</p>
+<button ui-sref="business-details({id: business.id})">Details</button>
 <br/>
 </div>
 
