@@ -1,6 +1,10 @@
 <h1>{{event.title}}</h1>
 <p>Description: {{event.description}}</p>
 <p>Date: {{event.start_date}} ~ {{event.end_date}}</p>
+<p>Attendees: {{attendees}}</p>
+<p>Is Attending: {{isAttending}}</p>
+<button ng-click="isAttending = !isAttending">{{isAttending && 'Cancel' || 'RSVP'}}</button>
+
 
 <h2>Promotions</h2>
 <p ng-repeat='promotion in promotions'>{{promotion.title}}, {{promotion.secret_code}}</p>

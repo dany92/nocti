@@ -30,6 +30,6 @@ module.exports = db.define('event', {
         }
     },
     defaultScope: {
-        include: [db.model('business')]
+        include: [db.model('business'), db.model('user')]
     }
 });

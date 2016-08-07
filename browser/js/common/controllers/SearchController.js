@@ -1,4 +1,4 @@
-app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory){
+app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory, $rootScope){
 
 	var bTotal;
 	navigator.geolocation.getCurrentPosition(function(position){
@@ -6,7 +6,8 @@ app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory){
 			latitude: position.coords.latitude,
 			longitude: position.coords.longitude
 		}
-		// BusinessFactory.fetchAll({position: pos})
+
+		// BusinessFactory.fetchAll({})
 		// .then(businesses => {
 		// 	console.log("GOTBACK!!!", businesses);
 		// })
