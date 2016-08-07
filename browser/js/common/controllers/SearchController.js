@@ -15,7 +15,6 @@ app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory, $ro
 
 	BusinessFactory.fetchAll({})
 	.then(businesses => {
-		console.log("business in factory", businesses);
 		bTotal = {
 			within5: businesses.within5 || [],
 			within10: businesses.within10 || [],

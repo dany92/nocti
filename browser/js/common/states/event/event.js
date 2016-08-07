@@ -12,8 +12,8 @@ app.config(function ($stateProvider) {
         	$scope.event = event;
             $scope.promotions = event.promotions;
             $scope.attendees = event.users.length;
+            $scope.isPast = event.isPast;
             var currentUser = $rootScope.currentUser;
-            console.log("ATTENDEES",event.users);
             $scope.isAttending = event.users.map(user=>user.email).indexOf(currentUser.email) !== -1;
 
             $scope.$watch('isAttending', function(newValue, oldValue) {
