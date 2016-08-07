@@ -1,0 +1,20 @@
+<h1>{{user.email}}'s Account</h1>
+
+<h2>Events Attending</h2>
+<div ng-repeat='event in events'>
+	<p>Title: {{event.title}}</p>
+	<p>Date: {{event.start_date}}</p>
+	<p>Hosted By: {{event.business.name}}</p>
+	<p>Address: {{event.business.address}}</p>
+	<button ng-click='cancel(event)'>Cancel</button>
+	<button ui-sref='event({id:event.id})'>Details</button>
+</div>
+
+<h2>History</h2>
+<div ng-repeat='activity in history'>
+	<p>Title: {{activity.title}}</p>
+	<p>Date: {{activity.start_date}}</p>
+	<p>Hosted By: {{activity.business.name}}</p>
+	<p>Address: {{activity.business.address}}</p>
+	<button ui-sref='event({id:activity.id})'>Details</button>
+</div>

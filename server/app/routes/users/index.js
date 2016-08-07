@@ -11,7 +11,7 @@ router.get('/', function(req,res,next){
 })
 
 router.param('id', function (req, res, next, id) {
-	User.findById(id)
+	User.findById(id, { include: [{ all: true }]})
 	.then(function (user) {
 		if (user) {
 			req.user = user;

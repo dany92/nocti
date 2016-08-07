@@ -4,7 +4,9 @@
 <div ng-repeat="event in events">
 <p>{{event.title}}</p>
 <p>{{event.start_date}}</p>
+<p>{{event.users.length}} people attending</p>
 <p>{{event.timeRemaining}} days remaining...</p>
 <p>hosted by: {{event.business.name}}</p>
+<button ui-sref='event({id:event.id})'>Details</button>
 <br/>
 </div>

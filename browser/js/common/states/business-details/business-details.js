@@ -14,8 +14,6 @@ app.config(function ($stateProvider) {
         controller: function($scope, business, events){
         	$scope.business = business;
         	$scope.events = events;
-        	// $scope.pastEvents = events.filter(event => event.isPast);
-        	// $scope.upcomingEvents = events.filter(event => !event.isPast);
         }
     })
     .state('business-upcomingEvents', {

@@ -7,10 +7,25 @@ module.exports = router;
 
 router.get('/', function(req,res,next){
 	//category will be req.query
+	if(req.query.position) next();
 	Business.findAll({where: req.query, include: [{
     model: db.model('event')}]})
 	.then(businesses => {
 		var filtered = sortBusiness(businesses, {latitude: 40.729749, longitude: -74.033530});
+		// console.log("filtered!!!", filtered);
+		res.json(filtered);
+	})
+	.catch(next);
+})
+// latitude: 40.729749, longitude: -74.033530
+
+router.get('/', function(req,res,next){
+	//category will be req.query
+	var pos = JSON.parse(req.query.position);
+	Business.findAll({include: [{
+    model: db.model('event')}]})
+	.then(businesses => {
+		var filtered = sortBusiness(businesses,pos);
 		// console.log("filtered!!!", filtered);
 		res.json(filtered);
 	})

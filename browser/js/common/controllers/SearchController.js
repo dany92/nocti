@@ -1,10 +1,20 @@
-app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory){
+app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory, $rootScope){
 
-	//Only the business that are within the limit should be returned. and the upper limit is 20 miles. The router will always return 20 miles and in the front end, you can filter the results.
 	var bTotal;
-	BusinessFactory.fetchAll()
+	navigator.geolocation.getCurrentPosition(function(position){
+		var pos = {
+			latitude: position.coords.latitude,
+			longitude: position.coords.longitude
+		}
+
+		// BusinessFactory.fetchAll({})
+		// .then(businesses => {
+		// 	console.log("GOTBACK!!!", businesses);
+		// })
+	})
+
+	BusinessFactory.fetchAll({})
 	.then(businesses => {
-		console.log("business in factory", businesses);
 		bTotal = {
 			within5: businesses.within5 || [],
 			within10: businesses.within10 || [],
@@ -34,14 +44,19 @@ app.controller('SearchCtrl', function($scope, BusinessFactory, EventFactory){
 
 	})
 
+	function setBusinesses(){
+
+	}
+	
 	function setEvents(){
-		var businessIds = $scope.businesses.map(b=>b.id)
-		EventFactory.fetchAll({businessId:
-			businessIds
-		})
-		.then(function(events){
-			$scope.events = events.filter(event=> !event.isPast);
-		})
+		var businessIds = $scope.businesses.map(b=>b.id);
+		if(businessIds.length === 0) $scope.events = [];
+		else{
+			EventFactory.fetchAll({businessId: businessIds})
+			.then(function(events){
+				$scope.events = events.filter(event=> !event.isPast);
+			})
+		}
 	}
 
 })
