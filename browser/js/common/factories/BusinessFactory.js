@@ -9,11 +9,6 @@ app.factory('BusinessFactory', function ($http) {
             .then (getData)
         },
 
-        // fetchByCategory: function (category) {
-        //     return $http.get('/api/businesses/category/' + category)
-        //     .then (getData)
-        // },
-
         fetchById: function (id) {
             return $http.get('/api/businesses/' + id)
             .then (getData)
