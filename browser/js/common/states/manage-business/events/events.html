@@ -1,0 +1,24 @@
+<h2>Upcoming Events</h2>
+<div ng-repeat='e in events.upcoming'>
+	<p>{{e.title}}</p>
+	<p>{{e.start_date}}</p>
+</div>
+<h2>Past Events</h2>
+<div ng-repeat='ev in events.past'>
+	<p>{{ev.title}}</p>
+	<p>{{ev.start_date}}</p>
+	<p>{{ev.end_date}}</p>
+</div>
+
+<h1>Create New Events</h1>
+<form name='eventForm' ng-submit='submit()'>
+	<label>Title</label>
+	<input type='text' ng-model='newEvent.title' name='title' />
+	<label>Description</label>
+	<input type='text' ng-model='newEvent.description' name='description'/>
+	<label>Start Date</label>
+	<input type="datetime-local" ng-model='newEvent.start_date' name='start_date' />
+	<label>End Date</label>
+	<input type="datetime-local" ng-model='newEvent.end_date' name='end_date'/>
+	<input type='submit' value='Create Event' />
+</form>

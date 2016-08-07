@@ -1,0 +1,25 @@
+<section>
+<!-- Business profile -->
+<p>{{business.name}}</p>
+<p>{{business.address}}</p>
+<p>{{business.category}}</p>
+<p>{{business.email}}</p>
+<p>{{business.phone}}</p>
+<p>{{business.website}}</p>
+</section>
+
+<form name='profileForm' ng-submit='submit()'>
+	<label>Business: </label>
+	<input type='text' name="name" ng-model=business.name />
+	<label>address: </label>
+	<input type='text' name="address" ng-model=business.address />
+	<label>Email: </label>
+	<input type='text' name="email" ng-model=business.email />
+	<label>Phone: </label>
+	<input type='text' name="phone" ng-model=business.phone />
+	<label>Website: </label>
+	<input type='text' name="website" ng-model=business.website />
+	<input type='submit' value='save changes'/>
+</form>
+
+<section>
