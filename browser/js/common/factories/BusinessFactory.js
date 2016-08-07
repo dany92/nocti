@@ -3,8 +3,9 @@ app.factory('BusinessFactory', function ($http) {
 
     return {
 
-        fetchAll: function () {
-            return $http.get('/api/businesses')
+        fetchAll: function (filter) {
+            filter = filter || {};
+            return $http.get('/api/businesses', {params: filter})
             .then (getData)
         },
 
