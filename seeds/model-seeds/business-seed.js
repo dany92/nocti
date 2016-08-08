@@ -63,6 +63,26 @@ var seedBusiness = function () {
             email: 'dawn@gmail.com',
             phone: '111-222-0357',
             website: 'www.levelup.com'
+        },
+        {
+            name: 'Rooftop',
+            address: '86 Cringe St, New York, NY 10013',
+            lat: 40.6782,
+            long: -73.8442,
+            category: 'nightclub',
+            email: 'dawn@gmail.com',
+            phone: '155-010-4755',
+            website: 'www.onthetop.com'
+        },
+        {
+            name: 'The Alley',
+            address: '729 Alley St, New York, NY 10034',
+            lat: 40.6601,
+            long: -73.7589,
+            category: 'nightclub',
+            email: 'alley@gmail.com',
+            phone: '243-864-4996',
+            website: 'www.thealley.com'
         }
     ];
 
