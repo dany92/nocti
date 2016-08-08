@@ -1,12 +1,23 @@
-<h2>Listing of events</h2>
-
-
-<div ng-repeat="event in events">
-<p>{{event.title}}</p>
-<p>{{event.start_date}}</p>
-<p>{{event.users.length}} people attending</p>
-<p>{{event.timeRemaining}} days remaining...</p>
-<p>hosted by: {{event.business.name}}</p>
-<button ui-sref='event({id:event.id})'>Details</button>
-<br/>
+<div class="col-lg-12" ng-repeat="event in events">
+	<dl class="dl-horizontal col-lg-4">
+		<dt>Title: </dt>
+		<dd>{{event.title}}</dd>
+		<dt>Starts: </dt>
+		<dd>{{event.start_date | date: "MMM d, y h:mm a"}}</dd>
+		<dt>Ends: </dt>
+		<dd>{{event.end_date | date: "MMM d, y h:mm a"}}</dd>
+	</dl>
+	<dl class="dl-horizontal col-lg-4">
+		<dt>Hosted By: </dt>
+		<dd>{{event.business.name}}</dd>
+		<dt>Attending: </dt>
+		<dd><span class="badge">{{event.users.length}} people</span></dd>
+		<dt>Days Remaining</dt>
+		<dd><span class="badge">{{event.timeRemaining}} days</span></dd>
+	</dl>
+	<div class="col-lg-4">
+		<button class="btn btn-primary
+		" ui-sref='event({id:event.id})'>Details</button>
+	</div>
+<hr/>
 </div>

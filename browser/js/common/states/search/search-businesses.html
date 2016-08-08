@@ -1,9 +1,13 @@
-<h2>Listing of businesses</h2>
-
-<div ng-repeat="business in businesses track by $index">
-<p>{{business.name}}</p>
-<p>{{business.address}}</p>
-<button ui-sref="business-details({id: business.id})">Details</button>
-<br/>
+<div class="col-lg-12" ng-repeat="business in businesses track by $index">
+	<dl class="dl-horizontal col-lg-8">
+		<dt>Venue Name: </dt>
+		<dd>{{business.name}}</dd>
+		<dt>Address: </dt>
+		<dd>{{business.address}}</dd>
+	</dl>
+	<div class='col-lg-4'>
+		<button class="btn btn-primary" ui-sref="business-details({id: business.id})">Details</button>
+	</div>
+	<hr/>
 </div>
 

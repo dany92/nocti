@@ -1,16 +1,14 @@
-<h1>Manage Your Business</h1>
- <div>
-    <nav class = "navbar navbar-default admin-navbar">
-        <div class="container-fluid">
-            <div class="row">
-                <ul class="nav navbar-nav">
-                    <li><a ui-sref="mybusiness.profile">Manage Profile</a></li>
-                    <li><a ui-sref="mybusiness.events">Manage Events</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <ui-view>
-    </ui-view>
+<div class="container">
+    <h1>Manage Your Business</h1>
+    <div>
+        <uib-tabset active="activeJustified" justified="true">
+            <uib-tab index="0" ui-sref="mybusiness.profile" heading="Manage Profile"></uib-tab>
+            <uib-tab index="1" ui-sref="mybusiness.events" heading="Manage Events"></uib-tab>
+        </uib-tabset>
+
+        <br />
+        <ui-view></ui-view>
+    </div>
+
 </div>
 

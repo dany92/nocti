@@ -1,20 +1,38 @@
-<h1>{{user.email}}'s Account</h1>
-
-<h2>Events Attending</h2>
-<div ng-repeat='event in events'>
-	<p>Title: {{event.title}}</p>
-	<p>Date: {{event.start_date}}</p>
-	<p>Hosted By: {{event.business.name}}</p>
-	<p>Address: {{event.business.address}}</p>
-	<button ng-click='cancel(event)'>Cancel</button>
-	<button ui-sref='event({id:event.id})'>Details</button>
-</div>
-
-<h2>History</h2>
-<div ng-repeat='activity in history'>
-	<p>Title: {{activity.title}}</p>
-	<p>Date: {{activity.start_date}}</p>
-	<p>Hosted By: {{activity.business.name}}</p>
-	<p>Address: {{activity.business.address}}</p>
-	<button ui-sref='event({id:activity.id})'>Details</button>
+<div class="container">
+	<div class="col-lg-12">
+		<h1>{{user.email}}'s Account</h1>
+		<div class="col-lg-6">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h2 class="panel-title">Events Attending</h2>
+				</div>
+				<div class="panel-body">
+					<div ng-repeat='event in events'>
+						<p>Title: {{event.title}}</p>
+						<p>Date: {{event.start_date}}</p>
+						<p>Hosted By: {{event.business.name}}</p>
+						<p>Address: {{event.business.address}}</p>
+						<button class="btn btn-danger" ng-click='cancel(event)'>Cancel</button>
+						<button class="btn btn-primary" ui-sref='event({id:event.id})'>Details</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h2 class="panel-title">History</h2>
+				</div>
+				<div class="panel-body">
+					<div ng-repeat='activity in history'>
+						<p>Title: {{activity.title}}</p>
+						<p>Date: {{activity.start_date}}</p>
+						<p>Hosted By: {{activity.business.name}}</p>
+						<p>Address: {{activity.business.address}}</p>
+						<button class="btn btn-primary" ui-sref='event({id:activity.id})'>Details</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

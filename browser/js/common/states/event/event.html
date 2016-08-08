@@ -1,10 +1,27 @@
-<h1>{{event.title}}</h1>
-<p>Description: {{event.description}}</p>
-<p>Date: {{event.start_date}} ~ {{event.end_date}}</p>
-<p>Attendees: {{attendees}}</p>
-<p>Is Attending: {{isAttending}}</p>
-<button ng-hide='isPast' ng-click="isAttending = !isAttending">{{isAttending && 'Cancel' || 'RSVP'}}</button>
+<div class="col-lg-12">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="panel-title">{{event.title}}</h1>
+			<span class="badge">{{attendees}} attending</span>
+		</div>
+		<div class="panel-body">
+			<span class="col-lg-6">
+				<h5>Date: {{event.start_date | date: "MMM d, y h:mm a"}} ~ {{event.end_date | date: "MMM d, y h:mm a"}}</h5>
+				<h5>Description: {{event.description}}</h5>
+			</span>
+			<span class="col-lg-6">
+				<h5>Is Attending: {{isAttending}}</h5>
+				<button class="btn btn-danger" ng-hide='isPast' ng-click="isAttending = !isAttending">{{isAttending && 'Cancel' || 'RSVP'}}</button>
+			</span>
+		</div>
+	</div>
 
-
-<h2>Promotions</h2>
-<p ng-repeat='promotion in promotions'>{{promotion.title}}, {{promotion.secret_code}}</p>
+	<div class="panel panel-danger">
+		<div class="panel-heading">
+			<h2 class="panel-title">Promotions</h2>
+		</div>
+		<div class="panel-body">
+			<h4 ng-repeat='promotion in promotions'>{{promotion.title}}, {{promotion.secret_code}}</h4>
+		</div>
+	</div>
+</div>

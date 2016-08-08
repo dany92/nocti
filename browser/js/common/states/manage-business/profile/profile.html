@@ -1,25 +1,42 @@
-<section>
-<!-- Business profile -->
-<p>{{business.name}}</p>
-<p>{{business.address}}</p>
-<p>{{business.category}}</p>
-<p>{{business.email}}</p>
-<p>{{business.phone}}</p>
-<p>{{business.website}}</p>
-</section>
+<div class="col-lg-6">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1 class="panel-title">{{business.name}}</h1>
+		</div>
+		<div class="panel-body">
+			<p>{{business.address}}</p>
+			<p>{{business.category}}</p>
+			<p>{{business.email}}</p>
+			<p>{{business.phone}}</p>
+			<p>{{business.website}}</p>
+		</div>
+	</div>
+</div>
 
-<form name='profileForm' ng-submit='submit()'>
-	<label>Business: </label>
-	<input type='text' name="name" ng-model=business.name />
-	<label>address: </label>
-	<input type='text' name="address" ng-model=business.address />
-	<label>Email: </label>
-	<input type='text' name="email" ng-model=business.email />
-	<label>Phone: </label>
-	<input type='text' name="phone" ng-model=business.phone />
-	<label>Website: </label>
-	<input type='text' name="website" ng-model=business.website />
-	<input type='submit' value='save changes'/>
+<form class="form-group col-lg-6" name='profileForm' ng-submit='submit()'>
+	<div class="form-group">
+		<label>Business: </label>
+		<input class="form-control" type='text' name="name" ng-model=business.name />
+	</div>
+	<div class="form-group">
+		<label>Address: </label>
+		<input class="form-control" type='text' name="address" ng-model=business.address />
+	</div>
+	<div class="form-group">
+		<label>Email: </label>
+		<input class="form-control" type='text' name="email" ng-model=business.email />
+	</div>
+	<div class="form-group">
+		<label>Phone: </label>
+		<input class="form-control" type='text' name="phone" ng-model=business.phone />
+	</div>
+	<div class="form-group">
+		<label>Website: </label>
+		<input class="form-control" type='text' name="website" ng-model=business.website />
+	</div>
+	<div class="form-group">
+		<input class="form-control" type='submit' value='save changes'/>
+	</div>
 </form>
 
 <section>
