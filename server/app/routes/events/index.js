@@ -25,6 +25,7 @@ router.param('id', function (req, res, next, id) {
 });
 
 router.get('/:id', function(req,res,next){
+	if(!req.user) res.status(404);
 	res.json(req.event);
 })
 
